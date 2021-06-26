@@ -9,13 +9,16 @@ import javax.persistence.*;
 @Entity
 public class EmployerDocuments {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long employerId;
     private String documentName;
     private double documentSize;
     @JsonBackReference
-    @MapsId
+//    @MapsId
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "employerProfile",referencedColumnName = "id")
+//    @ManyToOne
+//    @JoinColumn(name = "employerProfile",referencedColumnName = "id")
+    @JoinColumn(name = "employerProfile_id", nullable = false)
     private EmployerProfile employerProfile;
 
     public EmployerDocuments() {

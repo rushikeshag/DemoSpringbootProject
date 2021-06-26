@@ -17,6 +17,7 @@ public class EmployerProfile {
     @OneToMany(mappedBy = "employerProfile", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<EmployerDocuments> employerDocumentsList;
 
+
     public EmployerProfile() {
 
     }
